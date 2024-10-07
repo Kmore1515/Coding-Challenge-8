@@ -25,8 +25,8 @@ class Department {
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
     } // Task 4: Handle Bonuses for Managers
     calculateTotalSalaryWithBonus() {
-        if (employee.position === "Manager") {
-            bonuus = employee.salary * 0.15;
+        if (employee.position === "Manager") { // Making sure the bonus only goes to Managers.
+            bonus = employee.salary * 0.15;
         }
         return total + employee.salary + bonus;
     }
@@ -35,7 +35,7 @@ class Department {
 // Task 3: Create a Manager Class that Inherits from Employee
 class Manager extends Employee {
     constructor(name, salary, position, department) {
-        super(name, "Manager", salary, bonus);
+        super(name, "Manager", salary, bonus); // adding bonus to new super constructor
         this.name = name;
         this.salary = salary;
         this.position = position;
@@ -45,3 +45,14 @@ class Manager extends Employee {
         console.log(`Employee: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}, Bonus: ${this.bonus}`)
 }
 };
+
+ // Task 5: Create and Manage Departments and Employees
+ const sales = new Department("Sales") // Making new Department for sales.
+ const kyle = new Employee("Kyle", 85000, "Salesmen", "Sales") // Adding a sales employee.
+ sales.addEmployee(kyle)
+
+ const humanResourses = new Department("Human Resources") // Making new department for HR.
+ const nicolas = new Employee("Nicolas", 75000, "HR Rep", "Human Resources") // Adding an employee to HR.
+ humanResourses.addEmployee(nicolas)
+
+const giovanni = new Manager("Giovanni", 95000, "Sales Manager", "Sales") // Adding an employee to manager class.
