@@ -13,7 +13,7 @@ class Employee {
 
 
 // Task 2: Create a Department Class
-class department {
+class Department {
     constructor(name, employees) { // Creating a department class that takes in a name and the employees in that department.
         this.name = name;
         this.employees = employees;
@@ -23,9 +23,14 @@ class department {
     }
     getDepartmentSalary() { // To output the total salary of the department by using the .reduce method to sum up all the salaries. 
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
+    } // Task 4: Handle Bonuses for Managers
+    calculateTotalSalaryWithBonus() {
+        if (employee.position === "Manager") {
+            bonuus = employee.salary * 0.15;
+        }
+        return total + employee.salary + bonus;
     }
-    
-};
+}
 
 // Task 3: Create a Manager Class that Inherits from Employee
 class Manager extends Employee {
