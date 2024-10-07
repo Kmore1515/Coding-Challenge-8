@@ -12,7 +12,7 @@ class Employee {
 }};
 
 
-//Task 2: Create a Department Class
+// Task 2: Create a Department Class
 class department {
     constructor(name, employees) { // Creating a department class that takes in a name and the employees in that department.
         this.name = name;
@@ -27,3 +27,16 @@ class department {
     
 };
 
+// Task 3: Create a Manager Class that Inherits from Employee
+class Manager extends Employee {
+    constructor(name, salary, position, department) {
+        super(name, "Manager", salary, bonus);
+        this.name = name;
+        this.salary = salary;
+        this.position = position;
+        this.department = department;
+    }
+    getDetails() {
+        console.log(`Employee: ${this.name}, Salary: ${this.salary}, Position: ${this.position}, Department: ${this.department}, Bonus: ${this.bonus}`)
+}
+};
